@@ -18,12 +18,12 @@ typedef struct _CTGradientElement
 	struct _CTGradientElement *nextElement;
 	} CTGradientElement;
 
-typedef enum  _CTBlendingMode
+typedef NS_ENUM(NSInteger, CTGradientBlendingMode)
 	{
 	CTLinearBlendingMode,
 	CTChromaticBlendingMode,
 	CTInverseChromaticBlendingMode
-	} CTGradientBlendingMode;
+	} ;
 
 
 @interface CTGradient : NSObject <NSCopying, NSCoding>
