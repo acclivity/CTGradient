@@ -134,7 +134,7 @@ static void resolveHSV(float *color1, float *color2);
 #pragma mark Creation
 + (id)gradientWithBeginningColor:(NSColor *)begin endingColor:(NSColor *)end
   {
-  id newInstance = [[[self class] alloc] init];
+  CTGradient * newInstance = [[[self class] alloc] init];
   
   CTGradientElement color1;
   CTGradientElement color2;
@@ -159,7 +159,7 @@ static void resolveHSV(float *color1, float *color2);
 
 + (id)aquaSelectedGradient
   {
-  id newInstance = [[[self class] alloc] init];
+  CTGradient * newInstance = [[[self class] alloc] init];
   
   CTGradientElement color1;
   color1.red   = 0.58;
@@ -323,7 +323,7 @@ static void resolveHSV(float *color1, float *color2);
 
 + (id)unifiedDarkGradient
   {
-  id newInstance = [[[self class] alloc] init];
+  CTGradient * newInstance = [[[self class] alloc] init];
   
   CTGradientElement color1;
   color1.red = color1.green = color1.blue  = 0.68;
@@ -343,7 +343,7 @@ static void resolveHSV(float *color1, float *color2);
 
 + (id)sourceListSelectedGradient
   {
-  id newInstance = [[[self class] alloc] init];
+  CTGradient * newInstance = [[[self class] alloc] init];
   
   CTGradientElement color1;
   color1.red   = 0.06;
@@ -367,7 +367,7 @@ static void resolveHSV(float *color1, float *color2);
 
 + (id)sourceListUnselectedGradient
   {
-  id newInstance = [[[self class] alloc] init];
+  CTGradient * newInstance = [[[self class] alloc] init];
   
   CTGradientElement color1;
   color1.red   = 0.43;
@@ -391,7 +391,7 @@ static void resolveHSV(float *color1, float *color2);
 
 + (id)rainbowGradient
   {
-  id newInstance = [[[self class] alloc] init];
+  CTGradient * newInstance = [[[self class] alloc] init];
   
   CTGradientElement color1;
   color1.red   = 1.00;
@@ -417,7 +417,7 @@ static void resolveHSV(float *color1, float *color2);
 
 + (id)hydrogenSpectrumGradient
   {
-  id newInstance = [[[self class] alloc] init];
+  CTGradient * newInstance = [[[self class] alloc] init];
   
   struct {float hue; float position; float width;} colorBands[4];
   
