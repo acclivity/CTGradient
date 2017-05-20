@@ -1207,17 +1207,25 @@ void transformRGB_HSV(float *components) //H,S,B -> R,G,B
 	float MAX = R > G ? (R > B ? R : B) : (G > B ? G : B),
 	      MIN = R < G ? (R < B ? R : B) : (G < B ? G : B);
 	
-	if(MAX == MIN)
-		H = NAN;
-	else if(MAX == R)
-		if(G >= B)
-			H = 60*(G-B)/(MAX-MIN)+0;
-		else
-			H = 60*(G-B)/(MAX-MIN)+360;
-	else if(MAX == G)
-		H = 60*(B-R)/(MAX-MIN)+120;
-	else if(MAX == B)
-		H = 60*(R-G)/(MAX-MIN)+240;
+        if(MAX == MIN) {
+            H = NAN;
+        }
+        else if(MAX == R) {
+            if(G >= B) {
+                H = 60*(G-B)/(MAX-MIN)+0;
+            } else {
+                H = 60*(G-B)/(MAX-MIN)+360;
+            }
+        }
+        else if(MAX == G) {
+            H = 60*(B-R)/(MAX-MIN)+120;
+        }
+        else if(MAX == B) {
+            H = 60*(R-G)/(MAX-MIN)+240;
+        }
+        else {
+            H = NAN;
+        }
 	
 	S = MAX == 0 ? 0 : 1 - MIN/MAX;
 	V = MAX;
